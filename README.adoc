@@ -1,0 +1,4 @@
+= Issue Handler ({ver})
+:ver: v0.0.1
+
+Simple issue handler to provide issues in a repo without requiring Github or similar.

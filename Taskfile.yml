@@ -1,0 +1,29 @@
+# https://taskfile.dev
+
+version: "3"
+
+tasks:
+  default:
+    cmds:
+      - task --list
+    silent: true
+
+  test:
+    desc: run tests
+    sources:
+      - ./*.go
+      - ./internal/**/*.go
+      - ./go.mod
+    cmds:
+      - go test ./...
+
+  pub:
+    desc: build and publish local copy
+    sources:
+      - ./*.go
+      - ./internal/**/*.go
+      - ./go.mod
+    cmds:
+      - task: test
+      - go build -tags forceposix -o bin/issue ./
+      - sudo cp -uv ./bin/issue /usr/local/sbin

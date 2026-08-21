@@ -1,0 +1,8 @@
+{
+  "before-merge": [
+    {
+      "cmd": "task test"
+    }
+  ],
+  "after-merge": ["task pub"]
+}

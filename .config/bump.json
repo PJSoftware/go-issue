@@ -1,0 +1,12 @@
+{
+  "source": "./README.adoc",
+  "files": ["./README.adoc", "version.go"],
+  "git": {
+    "tag-required": "v{ver}",
+    "commit-message": "task: bump to v{ver}",
+    "create": {
+      "branch": "dev-v{ver}",
+      "if-branch": "main"
+    }
+  }
+}
